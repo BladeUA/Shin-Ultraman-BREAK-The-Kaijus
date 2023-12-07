@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D _compRigidbody2D;
-    public GameObject bulletPrefab;
     public int velocidad;
     private float direccionHorizontal;
 

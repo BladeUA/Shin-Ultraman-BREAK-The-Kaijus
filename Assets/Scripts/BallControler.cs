@@ -4,14 +4,24 @@ using UnityEngine;
 
 public class BallControler : MonoBehaviour
 {
-    public float speed = 10f;
+    public float speed;
+    public int direccionX;
+    public int direccionY;
 
     private Rigidbody2D rb;
-
-    void Start()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.velocity = new Vector2(speed, speed);
+
+    }
+    void Start()
+    {
+        
+    }
+
+    private void FixedUpdate()
+    {
+        rb.velocity = new Vector2(speed * direccionX, speed * direccionY);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -19,22 +29,39 @@ public class BallControler : MonoBehaviour
 
         if (tag == "VerticalWall")
         {
-            rb.velocity = new Vector2(-rb.velocity.x, rb.velocity.y);
+            if (direccionX > 0)
+            {
+                direccionX = -1;
+            }
+            else
+            {
+                direccionX = 1;
+            }
         }
         else if (tag == "HorizontalWall")
         {
-            rb.velocity = new Vector2(rb.velocity.x, -rb.velocity.y);
+            if (direccionY > 0)
+            {
+                direccionY = -1;
+            }
         }
-        else if (tag == "Vaus")
+        else if (tag == "VausLeft")
         {
-            float x = hitFactor(transform.position, collision.transform.position, collision.bounds.size.x);
-            Vector2 dir = new Vector2(x, 1).normalized;
-            rb.velocity = dir * speed;
+            direccionX = -1;
+            direccionY = 1;
         }
-        float hitFactor(Vector2 ballPos, Vector2 vausPos, float vausWidth)
+        else if (tag == "VausCenter")
         {
-            return (ballPos.x - vausPos.x) / vausWidth;
+            direccionX = 0;
+            direccionY = 1;
         }
+        else if (tag == "VausRight")
+        {
+            direccionX = 1;
+            direccionY = 1;
+        }
+
+
     }
 
 }

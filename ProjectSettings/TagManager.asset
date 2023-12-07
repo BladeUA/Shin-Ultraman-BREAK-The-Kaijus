@@ -7,6 +7,11 @@ TagManager:
   - VerticalWall
   - HorizontalWall
   - Vaus
+  - VausLeft
+  - VausCenter
+  - VausRight
+  - RightWall
+  - LeftWall
   layers:
   - Default
   - TransparentFX

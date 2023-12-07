@@ -849,8 +849,8 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Shin Ultraman - BREAK The Kaijus
-  metroPackageVersion: 
+  metroPackageName: ShinUltraman-BREAKTheKaijus
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -858,7 +858,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: Shin Ultraman - BREAK The Kaijus
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: Shin Ultraman - BREAK The Kaijus
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
