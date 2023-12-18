@@ -6,12 +6,11 @@ TagManager:
   tags:
   - VerticalWall
   - HorizontalWall
-  - Vaus
   - VausLeft
   - VausCenter
   - VausRight
-  - RightWall
-  - LeftWall
+  - Block
+  - Perder
   layers:
   - Default
   - TransparentFX
@@ -19,7 +18,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Colliders
   - 
   - 
   - 

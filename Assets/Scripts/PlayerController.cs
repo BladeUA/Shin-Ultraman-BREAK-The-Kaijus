@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D _compRigidbody2D;
-    public int velocidad;
+    private int velocidad = 8;
     private float direccionHorizontal;
 
     void Awake()
@@ -15,11 +15,10 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
-        direccionHorizontal = Input.GetAxis("Horizontal");
+        direccionHorizontal = Input.GetAxisRaw("Horizontal");
     }
     void FixedUpdate()
     {
         _compRigidbody2D.velocity = new Vector2(velocidad * direccionHorizontal,0);
     }
-
 }

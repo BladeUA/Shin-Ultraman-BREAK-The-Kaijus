@@ -7,21 +7,17 @@ public class BallControler : MonoBehaviour
     public float speed;
     public int direccionX;
     public int direccionY;
-
-    private Rigidbody2D rb;
+    public GameManagerController gm;
+    private Rigidbody2D _compRigidbody2D;
+    private int bloquesDestruidos = 0;
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
-
-    }
-    void Start()
-    {
-        
+        _compRigidbody2D = GetComponent<Rigidbody2D>();
     }
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(speed * direccionX, speed * direccionY);
+        _compRigidbody2D.velocity = new Vector2(speed * direccionX, speed * direccionY);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -60,8 +56,32 @@ public class BallControler : MonoBehaviour
             direccionX = 1;
             direccionY = 1;
         }
-
-
+        else if (tag == "Block")
+        {
+            Vector2 direction = collision.gameObject.transform.position - this.gameObject.transform.position;
+            if (Mathf.Abs(direction.y) > Mathf.Abs(direction.x))
+            {
+                direccionY = direccionY * -1;
+                gm.SumarPuntos();
+                bloquesDestruidos = bloquesDestruidos + 1;
+                Destroy(collision.gameObject);
+            }
+            else
+            {
+                direccionX = direccionX * -1;
+                gm.SumarPuntos();
+                bloquesDestruidos = bloquesDestruidos + 1;
+                Destroy(collision.gameObject);
+            }
+        }
+        else if (tag == "Perder")
+        {
+            gm.Perdiste();
+        }
+        gm.PlaySFX();
+        if (bloquesDestruidos >= 27)
+        {
+            gm.Ganaste();
+        }
     }
-
 }
