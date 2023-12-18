@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4885893388213830942}
   - component: {fileID: 9114122271267348611}
   - component: {fileID: 2946196436743055675}
+  - component: {fileID: 4874324489352718241}
   m_Layer: 0
   m_Name: BlockNeronga
   m_TagString: Block
@@ -130,3 +131,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 20, y: 20}
   m_EdgeRadius: 0
+--- !u!114 &4874324489352718241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4171527001550538910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ed0c75e83e08704aafc53be5777f900, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

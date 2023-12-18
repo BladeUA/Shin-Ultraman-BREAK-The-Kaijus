@@ -11,6 +11,7 @@ TagManager:
   - VausRight
   - Block
   - Perder
+  - Ball
   layers:
   - Default
   - TransparentFX

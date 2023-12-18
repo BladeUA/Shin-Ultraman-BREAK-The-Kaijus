@@ -9,6 +9,7 @@ public class BallControler : MonoBehaviour
     public int direccionY;
     public GameManagerController gm;
     private Rigidbody2D _compRigidbody2D;
+    public PlayerController playerStats;
     private int bloquesDestruidos = 0;
     private void Awake()
     {
@@ -78,10 +79,10 @@ public class BallControler : MonoBehaviour
         {
             gm.Perdiste();
         }
-        gm.PlaySFX();
         if (bloquesDestruidos >= 27)
         {
             gm.Ganaste();
         }
+        gm.PlaySFX();
     }
 }

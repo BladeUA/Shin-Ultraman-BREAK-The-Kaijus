@@ -12,7 +12,6 @@ public class GameManagerController : MonoBehaviour
     private int puntaje = 0;
     public string ganaste;
     public string perdiste;
-
     private void Awake()
     {
         msController.GetComponent<AudioSource>().Play();
